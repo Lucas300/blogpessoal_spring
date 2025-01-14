@@ -21,6 +21,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.generation.blogpessoal.model.Postagem;
 import com.generation.blogpessoal.repository.PostagemRepository;
+import com.generation.blogpessoal.repository.TemaRepository;
 
 import jakarta.validation.Valid;
 
@@ -35,6 +36,9 @@ public class PostagemController {
     // Injeta automaticamente uma instância do repositório
     @Autowired
     private PostagemRepository postagemRepository;
+    
+    @Autowired
+    private TemaRepository temaRepository;
 
     // Mapeia requisições GET para "/postagens", retornando todas as postagens
     @GetMapping
@@ -62,19 +66,27 @@ public class PostagemController {
     // Mapeia requisições POST para "/postagens", criando uma nova postagem
     @PostMapping
     public ResponseEntity<Postagem> post(@Valid @RequestBody Postagem postagem) {
-        // Salva a postagem no banco e retorna status 201 (Created)
+        if(temaRepository.existsById(postagem.getTema().getId())) {
+    	// Salva a postagem no banco e retorna status 201 (Created)
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(postagemRepository.save(postagem));
+        }
+        
+        throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Tema não existe!",null);
     }
 
     // Mapeia requisições PUT para "/postagens", atualizando uma postagem existente
     @PutMapping
     public ResponseEntity<Postagem> put(@Valid @RequestBody Postagem postagem) {
-        // Verifica se a postagem com o ID fornecido existe
-        return postagemRepository.findById(postagem.getId())
-                .map(reposta -> ResponseEntity.status(HttpStatus.OK)
-                .body(postagemRepository.save(postagem))) // Atualiza e retorna a postagem
-                .orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build()); // Retorna status 404 se não encontrar
+    	if(postagemRepository.existsById(postagem.getId())){
+    		if(temaRepository.existsById(postagem.getTema().getId())) {
+    			return ResponseEntity.status(HttpStatus.OK)
+    					.body(postagemRepository.save(postagem));
+    		
+    		}
+    			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Tema não existe!",null);
+    	}
+    	return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 
     // Mapeia requisições DELETE para "/postagens/{id}", removendo uma postagem pelo ID
