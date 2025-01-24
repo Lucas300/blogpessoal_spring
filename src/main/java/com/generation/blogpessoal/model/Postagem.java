@@ -42,6 +42,8 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
+	
+	
 	//metodos de acesso
 	public Long getId() {
 		return id;
