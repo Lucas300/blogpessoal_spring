@@ -34,6 +34,12 @@ public class Postagem {
 	@UpdateTimestamp // marca a data da criação
 	private LocalDateTime data; // 10/10/25 18:25:58
 	
+	private String github;
+
+	private String imagem;
+	
+	private String linkedin;
+	
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private Tema tema;
@@ -42,9 +48,26 @@ public class Postagem {
 	@JsonIgnoreProperties("postagem")
 	private Usuario usuario;
 	
+	public String getImagem() {
+		return imagem;
+	}
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+	public String getLinkedin() {
+		return linkedin;
+	}
+	public void setLinkedin(String linkedin) {
+		this.linkedin = linkedin;
+	}
+	public String getGithub() {
+		return github;
+	}
+	public void setGithub(String github) {
+		this.github = github;
+	}
+
 	
-	
-	//metodos de acesso
 	public Long getId() {
 		return id;
 	}
