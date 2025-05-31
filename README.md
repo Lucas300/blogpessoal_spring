@@ -1,14 +1,15 @@
-# Implementando um CRUD completo em Java com Spring Boot
+# 🔐 API - Blog Pessoal com Spring Boot, Spring Security e JWT
 
-Este projeto implementa um CRUD completo utilizando Java e Spring Boot, incluindo relacionamento entre entidades e configuração de segurança com Spring Security e JWT.
+Este é o back-end de um projeto que implementa um CRUD completo com autenticação e autorização, utilizando **Java**, **Spring Boot**, **Spring Security** e **JWT**. A API conta com relacionamento entre entidades, validações e está documentada com **Swagger**.
 
-## Testando a aplicação
+## 🚀 Projeto Online
 
-### A aplicação possui um deploy e está documentada no Swagger. Para acessá-la e testar seus endpoints, basta acessar o seguinte endereço: [Deploy da aplicação](https://blogpessoal-schf.onrender.com)
+🔗 <strong>Acesse aqui o Blog Pessoal:</strong> <a href="https://portifolio-react-three-pi.vercel.app/" target="_blank">https://portifolio-react-three-pi.vercel.app/</a>  
 
-### Ou 
+🔗 <strong>Repositório Front-end:</strong> <a href="https://github.com/Lucas300/BlogPessoal_React" target="_blank">https://github.com/Lucas300/BlogPessoal_React</a>
 
-## Teste na sua máquina <a href="#testar">Instruções</a>
+
+---
 
 ## Tecnologias utilizadas
 
@@ -59,5 +60,3 @@ Além disso, o projeto seguiu boas práticas, como o uso de injeção de depend�
 
 ### Agora você já pode explorar a API documentada com Swagger:
 <img width="500px" src="imagens_readme/swagger.JPG"><br>
-
-# 🛠 Front-end in progress... [https://github.com/Lucas300/portifolioReact.git](https://github.com/Lucas300/portifolioReact)
