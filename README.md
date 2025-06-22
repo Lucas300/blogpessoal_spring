@@ -4,7 +4,7 @@ Este é o back-end de um projeto que implementa um CRUD completo com autenticaç
 
 ## 🚀 Projeto Online
 
-🔗 <strong>Acesse aqui o Blog Pessoal:</strong> <a href="https://portifolio-react-three-pi.vercel.app/" target="_blank">https://portifolio-react-three-pi.vercel.app/</a>  
+🔗 <strong>Acesse aqui o Blog Pessoal:</strong> <a href="https://blog-pessoal-lucas-pi.vercel.app/" target="_blank">https://blog-pessoal-lucas-pi.vercel.app/</a>  
 
 🔗 <strong>Repositório Front-end:</strong> <a href="https://github.com/Lucas300/BlogPessoal_React" target="_blank">https://github.com/Lucas300/BlogPessoal_React</a>
 
